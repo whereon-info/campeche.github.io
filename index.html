@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+	<title>Plataforma de Análisis Geoestadístico</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
@@ -87,7 +88,13 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-        var zoomControl = L.control.zoom({
+        var title = L.control();
+		title.onAdd = function (map) {
+	var div = L.DomUtil.create('div', 'info');
+		div.innerHTML +=
+		'<h1>AX INTELLIGENCES</h1>Plataforma de análisis geoestadístico';
+		
+	var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
