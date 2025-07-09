@@ -93,7 +93,9 @@
 	var div = L.DomUtil.create('div', 'info');
 		div.innerHTML +=
 		'<h1>AX INTELLIGENCES</h1>Plataforma de análisis geoestadístico';
-		
+	return div;
+		};
+		title.addTo(map);	
 	var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
